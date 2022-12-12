@@ -18,7 +18,7 @@ rotate_btn.addEventListener("click", () => {
   log.textContent += `Lock pressed \n`;
 
   log.textContent += "Fullscreen pressed \n";
-  const container = document.querySelector("#example_container");
+  const container = document.querySelector("#display-cover");
   container.requestFullscreen().catch((error) => {
     log.textContent += `${error}\n`;
   });
