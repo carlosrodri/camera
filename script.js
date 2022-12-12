@@ -17,6 +17,12 @@ const rotate_btn = document.querySelector("#lock_button");
 rotate_btn.addEventListener("click", () => {
   log.textContent += `Lock pressed \n`;
 
+  log.textContent += "Fullscreen pressed \n";
+  const container = document.querySelector("#example_container");
+  container.requestFullscreen().catch((error) => {
+    log.textContent += `${error}\n`;
+  });
+
   const oppositeOrientation = screen.orientation.type.startsWith("portrait")
     ? "landscape"
     : "portrait";
