@@ -15,19 +15,15 @@ const log = document.getElementById("log");
 // Lock button: Lock the screen to the other orientation (rotated by 90 degrees)
 const rotate_btn = document.querySelector("#lock_button");
 rotate_btn.addEventListener("click", () => {
-    
-    log.textContent += "Fullscreen pressed \n";
-    const container = document.querySelector("#container");
-    container.requestFullscreen().catch((error) => {
-        log.textContent += `${error}\n`;
-    });
-    log.textContent += `Lock pressed \n`;
+  log.textContent += "Fullscreen pressed \n";
+  const container = document.querySelector("#container");
+  container.requestFullscreen().catch((error) => {
+    log.textContent += `${error}\n`;
+  });
+  log.textContent += `Lock pressed \n`;
 
-  const oppositeOrientation = screen.orientation.type.startsWith("portrait")
-    ? "landscape"
-    : "portrait";
   screen.orientation
-    .lock(oppositeOrientation)
+    .lock("landscape")
     .then(() => {
       log.textContent = `Locked to ${oppositeOrientation}\n`;
     })
