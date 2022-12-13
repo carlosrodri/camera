@@ -86,8 +86,13 @@ const doScreenshot = () => {
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   canvas.getContext("2d").drawImage(video, 0, 0);
-  screenshotImage.src = canvas.toDataURL("image/webp");
+  screenshotImage.src = canvas.toDataURL("image/jpg");
   screenshotImage.classList.remove("d-none");
+  console.log(screenshotImage.src);
+  var a = document.createElement("a"); //Create <a>
+    a.href = screenshotImage.src; //Image Base64 Goes here
+    a.download = "Image.jpg"; //File name Here
+    a.click(); //Downloaded file
 };
 
 pause.onclick = pauseStream;
