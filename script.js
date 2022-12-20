@@ -35,12 +35,12 @@ rotate_btn.addEventListener("click", () => {
 const constraints = {
   video: {
     aspectRatio: 9 / 16,
-    heigth: {
+    width: {
       min: 1280,
       ideal: 1920,
       max: 2560,
     },
-    width: {
+    height: {
       min: 720,
       ideal: 1080,
       max: 1440,
