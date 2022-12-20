@@ -23,7 +23,7 @@ rotate_btn.addEventListener("click", () => {
   log.textContent += `Lock pressed \n`;
 
   screen.orientation
-    .lock("landscape")
+    .lock("portrait")
     .then(() => {
       log.textContent = `Locked to ${oppositeOrientation}\n`;
     })
@@ -34,13 +34,13 @@ rotate_btn.addEventListener("click", () => {
 
 const constraints = {
   video: {
-    aspectRatio: 16 / 9,
-    width: {
+    aspectRatio: 9 / 16,
+    heigth: {
       min: 1280,
       ideal: 1920,
       max: 2560,
     },
-    height: {
+    width: {
       min: 720,
       ideal: 1080,
       max: 1440,
@@ -73,6 +73,8 @@ play.onclick = () => {
       },
     };
     startStream(updatedConstraints);
+  }else{
+    console.log('doesnt support');
   }
 };
 
